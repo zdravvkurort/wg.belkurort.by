@@ -1,0 +1,26 @@
+.prevent-doubles-control-suggest-list-opened {
+    display: block;
+    background: #fff;
+    max-height: 211px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    position: absolute;
+    border: 1px solid #dadadb;
+    top: 100%;
+    margin-top: -1px;
+    width: 100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+.prevent-doubles-control--suggest--list--item {
+    padding: 5px 6px;
+    white-space: nowrap;
+		cursor: pointer;
+}
+
+.prevent-doubles-control--suggest--list--item:hover {
+    background-color: #f5f5f5;
+}

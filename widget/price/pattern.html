@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+  <title>Просчёт стоимости санатория</title>
+</head>
+
+<body>
+  <div id="vue">
+    <el-form label-width="160px" v-loading='loading'>
+      <el-row>
+        <el-col :span="12">
+
+          <el-form-item label="Даты заезда/выезда">
+            <el-date-picker v-model="allsettings.dates_in_out" type="daterange" range-separator="по" start-placeholder="Дата заезда" end-placeholder="Дата выезда" :default-time="['03:00:00', '03:00:00']" @change="updatePrices()">
+            </el-date-picker>
+          </el-form-item>
+
+          <el-form-item label="Место">
+            <el-select v-model="allsettings.sanatorii" placeholder="Выберите санаторий" filterable @change="updatePlace()">
+              <el-option v-for="item in sanatoriums" :key="item.id" :label="item.name" :value="item.id">
+                <span style="float: left">{{ item.name }} ({{ item.type }}) </span>
+                <span style="float: right; color: #8492a6; font-size: 13px; padding-left: 10px;"> {{ item.oblast }}</span>
+              </el-option>
+            </el-select>
+
+        </el-col>
+        <el-col :span="6" :offset="3">
+          <span>
+            <el-row>
+              <h4>Итого: {{allprice}}</h4>
+              <el-select v-model="allsettings.valuta" placeholder="Выберите валюту" @change="updatePrices()">
+                <el-option v-for="item in currency" :key="item.name" :label="item.name" :value="item.name">
+                </el-option>
+              </el-select>
+            </el-row>
+          </span>
+        </el-col>
+
+      </el-row>
+      <el-tabs v-model="editableTabsValue" type="border-card" editable @edit="handleTabsEdit">
+        <el-tab-pane v-for="(item, index) in selected_items" :label="item.name+' номер'" :name="item.name" :key="item.id">
+          <el-row>
+            <el-col :span="10">
+              <el-form-item label="Категория номера">
+                <el-select v-model="item.type_appart" placeholder="Выберите категорию номера" @change="updateCategory(index)">
+                  <el-option v-for="item in unique_category.type_appart" :key="item" :label="item" :value="item">
+                  </el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-button type="success" @click="addGuest(item.id)">Добавить гостя</el-button>
+            </el-col>
+            <el-col :span="8">
+              Осн. мест. {{item.main_place}} <br>
+              Доп. мест. {{item.dop_place}}
+            </el-col>
+
+          </el-row>
+          <template>
+            <el-table :data="item.guests" style="width: 100%">
+              <el-table-column label="Тип места">
+                <template slot-scope="scope">
+                  <el-select v-model="scope.row.type_book" placeholder="Выберите тип места" @change="setPrices()">
+                    <el-option v-for="item in scope.row.type_book_access" :key="item.value" :label="item.value" :value="item.value" :disabled="item.disabled">
+                    </el-option>
+                  </el-select>
+                </template>
+              </el-table-column>
+              <el-table-column label="Гражданство">
+                <template slot-scope="scope">
+                  <el-select v-model="scope.row.nationality" placeholder="Выберите гражданство" @change="setPrices()">
+                    <el-option v-for="item in unique_category.nationality" :key="item" :label="item" :value="item">
+                    </el-option>
+                  </el-select>
+                </template>
+              </el-table-column>
+              <el-table-column label="Возраст">
+                <template slot-scope="scope">
+                  <el-input-number controls-position="right" size="mini" v-model="scope.row.old" @change="setPrices()"></el-input-number>
+                </template>
+              </el-table-column>
+              <el-table-column label="Питание">
+                <template slot-scope="scope">
+                  <el-select v-model="scope.row.pitanie" placeholder="Выберите тип питания" @change="setPrices()">
+                    <el-option v-for="item in unique_category.pitanie" :key="item" :label="item" :value="item">
+                    </el-option>
+                  </el-select>
+                </template>
+              </el-table-column>
+              <el-table-column label="Лечение">
+                <template slot-scope="scope">
+                  <el-select v-model="scope.row.health" placeholder="Выберите тип лечения" @change="setPrices()">
+                    <el-option v-for="item in unique_category.health" :key="item" :label="item" :value="item">
+                    </el-option>
+                  </el-select>
+                </template>
+              </el-table-column>
+              <el-table-column label="Сумма" width="100">
+                <template slot-scope="scope">
+                  <el-row>
+                    {{scope.row.price}}
+                    <el-tooltip v-if="scope.row.info.length > 0" class="item" effect="dark" :content="scope.row.info">
+                      <el-button type="info" icon="el-icon-info" circle size="mini"></el-button>
+                    </el-tooltip>
+                  </el-row>
+                </template>
+              </el-table-column>
+              <el-table-column label="" width="50">
+                <template slot-scope="scope">
+                  <el-button type="danger" icon="el-icon-delete" circle size="mini" @click="deleteGuest(item.id,scope.$index, scope.row)"></el-button>
+                </template>
+              </el-table-column>
+            </el-table>
+          </template>
+          </template>
+        </el-tab-pane>
+        <el-tab-pane label="Доп услуги" name="dops" key="dops">
+          <el-button type="success" @click="addDop()">Добавить услугу</el-button>
+          <template>
+            <el-table :data="dops.selected" style="width: 100%">
+              <el-table-column label="Услуга">
+                <template slot-scope="scope">
+                  <el-select v-model="scope.row.id" placeholder="Выберите услугу" @change="setPriceDop()">
+                    <el-option v-for="item in filter_dops" :key="item.id" :label="item.name+' c '+item.date_from+' по '+item.date_to" :value="item.id">
+                    </el-option>
+                  </el-select>
+                </template>
+              </el-table-column>
+              <el-table-column label="Количество">
+                <template slot-scope="scope">
+                  <el-input-number controls-position="right" size="mini" v-model="scope.row.count" @change="setPriceDop()"></el-input-number>
+                </template>
+              </el-table-column>
+              <el-table-column label="Сумма" width="100">
+                <template slot-scope="scope">
+                  <el-row>
+                    {{scope.row.sum}}
+                  </el-row>
+                </template>
+              </el-table-column>
+              <el-table-column label="" width="50">
+                <template slot-scope="scope">
+                  <el-button type="danger" icon="el-icon-delete" circle size="mini" @click="deleteDop(scope.$index, scope.row)"></el-button>
+                </template>
+              </el-table-column>
+            </el-table>
+          </template>
+        </el-tab-pane>
+      </el-tabs>
+    </el-form>
+  </div>
+
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+  <script>
+    ELEMENT.locale(ELEMENT.lang.en)
+  </script>
+  <script type="text/javascript" src="script.js"></script>
+
+  <style>
+    .text {
+      font-size: 14px;
+    }
+
+    .item {
+      margin-bottom: 0px;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      content: "";
+    }
+
+    .clearfix:after {
+      clear: both
+    }
+
+    .box-card {
+      width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</body>
+
+</html>

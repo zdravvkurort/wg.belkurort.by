@@ -1,0 +1,108 @@
+[16-Jun-2026 21:17:54 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79617562230', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 21:18:05 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79617562230', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 21:21:05 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79617562230', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 21:31:05 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79617562230', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 22:01:05 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79617562230', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 22:14:18 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79219185365', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 22:14:28 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79219185365', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 22:17:28 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79219185365', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 22:27:28 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79219185365', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 22:57:28 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79219185365', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 23:01:07 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79617562230', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289
+[16-Jun-2026 23:57:28 Europe/Minsk] PHP Fatal error:  Uncaught exception 'AmoCRM\Exception' with message 'Неправильный логин или пароль' in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php:289
+Stack trace:
+#0 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(265): AmoCRM\Request\Request->parseResponse('{"response":{"e...', Array)
+#1 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php(125): AmoCRM\Request\Request->request('/private/api/v2...', NULL)
+#2 /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Models/Contact.php(59): AmoCRM\Request\Request->getRequest('/private/api/v2...', Array, NULL)
+#3 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/amo_functions.php(106): AmoCRM\Models\Contact->apiList(Array)
+#4 /var/www/h98711/data/www/wg.belkurort.by/webhooks/vk/in.php(63): is_contact_exists('79219185365', '')
+#5 {main}
+  thrown in /var/www/h98711/data/www/wg.belkurort.by/oauth/vendor/dotzero/amocrm/src/Request/Request.php on line 289

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="./theme.css">
+</head>
+
+<body>
+  <div id="app">
+    <el-form label-width="200px" v-loading.fullscreen.lock="fullscreenLoading" @submit.prevent>
+      <el-input placeholder="Введите стоимость в бел руб" v-model="bel" clearable @input="handleChange">
+        <template slot="append">BYN</template>
+      </el-input>
+      <el-row type="flex" justify="start">
+        <el-col :span="20">
+          <h2>Итого сумма: {{ros}} рос руб</br> по курсу {{kurs}}</h2>
+        </el-col>
+        <el-col :span="2">
+          <el-button icon="el-icon-document-copy" style="margin-top: 10px;" @click="copy"></el-button>
+        </el-col>
+      </el-row>
+    </el-form>
+    <p>Используйте этот калькулятор в случае, если валюта сделки российские рубли, санаторий не выставляет счета в рос руб, и Вам нужно перевести сумму счёта от санатория в бел руб в российские рубли, чтобы выставить сумму в рос руб клиенту в договоре.</p>
+  </div>
+</body>
+<!-- import Vue before Element -->
+<script src="./js/vue.js"></script>
+<!-- import JavaScript -->
+<script src="./js/element.js"></script>
+<script src="./js/en.js"></script>
+<script src="./js/axios.js"></script>
+<script>
+  ELEMENT.locale(ELEMENT.lang.en)
+
+  new Vue({
+    el: "#app",
+    data: {
+      bel: 0,
+      kurs: 0,
+      ros: 0,
+	  ros4copy: 0,
+      fullscreenLoading: true
+    },
+    methods: {
+      handleChange(value) {
+        this.bel = this.bel.replace(/[^.\d\.\,]+/g,"").replace(",", ".").replace(/^([^\.]*\.)|\./g,'$1')
+        this.ros = (this.bel / this.kurs * 100).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1 ").replace(".", ",");
+		this.ros4copy = Math.floor(this.bel / this.kurs * 100)
+      },
+      copy() {
+        navigator.clipboard.writeText(this.ros4copy)
+          .then(() => {
+            this.$message({
+              message: 'Скопировано',
+              type: 'success'
+            });
+          })
+          .catch(err => {
+            this.$message('Ошибка');
+          });
+      },
+	  async getCurrency() {
+      try {
+        const courses = await axios.post("https://wg.belkurort.by/widget/price/getInnerCoursesFromDB.php", {date: new Date().toLocaleDateString(), hash: 'jkdshglsdfoiguosdfignmdfsjhgkshdflgjhdsflkjg'})
+			  this.kurs = courses.data['BYNRUB']
+      } catch (error) {
+        this.$message({
+				  message: error,
+				  type: "error"
+				})
+      } finally {
+        this.fullscreenLoading = false
+      }
+
+      // this.fullscreenLoading = true
+	  	// 	axios
+			// 	.get("https://script.google.com/macros/s/AKfycbwacM6mwmHs7CE2szz05_P5DgESKVUFbxtTFAK8BBc60i10nJ2x/exec")
+			// 	.then(response => (
+			// 	  this.kurs = response["data"][0]
+			// 	))
+			// 	.catch(error => this.$message({
+			// 	  message: error,
+			// 	  type: "error"
+			// 	})).finally(() => (this.fullscreenLoading = false));
+	  }
+    },
+    mounted() {
+				this.getCurrency();
+				setInterval(() => { this.getCurrency() }, 30*60000);
+    }
+  })
+</script>
+<style>
+  h2 {
+    font: 16pt sans-serif;
+  }
+</style>
+
+</html>

@@ -1,0 +1,26 @@
+<div id="guestlist">
+{% for v in values %}
+	<div draggable="true" class="div-block" id="{{v.id}}">
+		<div class="div-block-4" data-type="info">
+			<div style="font-weight: bold;">{{v.guestname}} (<span class="nationality">{{v.nationality}}</span>) - {{v.birthday}} г.р.</div>
+			<div>{{v.typeroom}} ({{v.vidrazm}})</div>
+			<div class="div-block-2">
+				<div>{{v.food}}</div>
+				<div>{{v.health}}</div>
+			</div>
+		</div>
+		<div class="guestget-copy-block" data-type="copy">
+        <span class="button-input__context-menu__item__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="16">
+						<path d="M0 0h24v24H0z" fill="none"></path>
+						<path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path>
+					</svg>
+        </span>
+    </div>
+		<div class="div-block-5" data-type="delete">
+			<span class="button-input__context-menu__item__icon icon icon-inline icon-delete-trash "></span>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<link type="text/css" rel="stylesheet" href="https://wg.belkurort.by/widget/guests/guestget.css?version=1.0.0" >

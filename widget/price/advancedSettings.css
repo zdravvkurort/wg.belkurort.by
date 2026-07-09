@@ -1,0 +1,58 @@
+.action_button_wrapper {
+	position: absolute;
+	top: 0.8rem;
+	right: 1.2rem;
+	display:flex;
+	z-index: 70;
+}
+
+.changeInnerCourses {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+	background-color: white;
+}
+.changeInnerCourses thead th {
+	font-weight: bold;
+	text-align: center;
+	border: none;
+	padding: 10px 15px;
+	background: #d8d8d8;
+	font-size: 14px;
+}
+.changeInnerCourses thead tr th:first-child {
+	border-radius: 8px 0 0 8px;
+}
+.changeInnerCourses thead tr th:last-child {
+	border-radius: 0 8px 8px 0;
+}
+.changeInnerCourses tbody td {
+	text-align: center;
+	border: none;
+	padding: 10px 15px;
+	/* font-size: 14px; */
+	vertical-align: top;
+}
+.changeInnerCourses tbody tr:nth-child(even){
+	background: #ececec;
+}
+.changeInnerCourses tbody tr td:first-child {
+	border-radius: 8px 0 0 8px;
+}
+.changeInnerCourses tbody tr td:last-child {
+	border-radius: 0 8px 8px 0;
+}
+.changeInnerCourses td input[type="number"] {
+  background: none;
+    width: 3.5rem;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+}
+.changeInnerCourses td input[type="number"]::-webkit-outer-spin-button,
+.changeInnerCourses td input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+}
+.changeInnerCourses td input[type="number"]:focus {
+	outline: 2px solid blue;
+}

@@ -1,0 +1,221 @@
+.diskGet {
+  font-family: 'Roboto',arial,sans-serif;
+  font-size: small;
+  background-color: rgb(248, 248, 248);
+}
+.diskGet-table {
+  box-shadow: 1px 1px 3px #cfcfcf inset; 
+}
+.diskGet-cell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid;
+  border-color: rgb(118 118 118 / 10%);
+  min-height: 32px;
+}
+
+.diskGet-cell:hover {
+  cursor: pointer;
+  background-color: #1966d20c;
+}
+.diskGet-cell-icon {
+  flex-basis: 1rem;
+  margin: 6px;
+  fill: rgb(95, 99, 104);
+}
+.diskGet-icons {
+  vertical-align: middle;
+}
+.diskGet-cell-name {
+  flex: 1 auto;
+  font-size: 14px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.diskGet-cell-actions {
+  flex-basis: 1rem;
+  margin: 6px;
+  color: rgb(118 118 118);
+}
+.diskGet-button {
+  height: 40px;
+  border-width: 0;
+  background: white;
+  color: #737373;
+  border-radius: 5px;
+  white-space: nowrap;
+  box-shadow: 1px 1px 0px 1px rgba(0,0,0,0.05);
+  transition-property: background-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  padding: 0;
+  margin-top: 8px;
+}
+  
+  .diskGet-button:focus,
+  .diskGet-button:hover {
+    box-shadow: 1px 4px 5px 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  
+  .diskGet-button:active {
+    background-color: #e5e5e5;
+    box-shadow: none;
+    transition-duration: 10ms;
+  }
+
+  
+.diskGet-button-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 8px 0 8px 8px;
+  width: 18px;
+  box-sizing: border-box;
+  fill: rgb(95, 99, 104);
+}
+
+.diskGet-button-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 12px 0 6px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+.diskGet-filetype {
+  vertical-align: middle;
+  padding: 3px;
+}
+
+.folderTableEmpty {
+  min-height: 100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #848c90;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.folderTableEmptyText {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.diskGetButton {
+  font-weight: 500;
+}
+
+.diskGet-icon {
+  margin-right: 8px;
+}
+
+.diskGet-cell-selected {
+  background: #beacff;
+  opacity: 0.6;
+}
+
+.diskGet-cell-target-element {
+  background: #beacff;
+}
+/* 
+-----------------------------------------------------------------------------------------------
+-------------------------------------------loader----------------------------------------------
+-----------------------------------------------------------------------------------------------
+ */
+
+.diskGet-loader {
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 65px;
+  background: #ffffff;
+  z-index: 1000;
+  opacity: .4;
+  pointer-events: none
+}
+
+.diskGet-loader:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-top: -8px;
+  margin-left: -8px;
+  display: block;
+  z-index: 1001;
+  border: solid 2px transparent;
+  border-top-color: #158fd2;
+  border-left-color: #158fd2;
+  border-radius: 100%;
+  -webkit-animation: nprogress-spinner 900ms linear infinite;
+  animation: nprogress-spinner 900ms linear infinite;
+}
+
+/* 
+-----------------------------------------------------------------------------------------------
+-------------------------------------Context Menu----------------------------------------------
+-----------------------------------------------------------------------------------------------
+ */
+
+ .context-menu-diskGet {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 30px -10px rgb(0 0 0 / 30%);
+  font-size: 16px;
+}
+ 
+.context-menu-diskGet--active {
+  display: block;
+}
+
+.context-menu-diskGet__item {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0px 18px 0px 12px;
+  text-decoration: none;
+  outline: none;
+}
+
+.context-menu-diskGet__item:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.context-menu-diskGet__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*--------------------Лоадер файла-----------------------------------*/
+
+.diskGet-file-loader {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding-left: 32px;
+  animation:  1.2s infinite ease-in-out diskGet-fileload;
+  background: linear-gradient(100deg, #eceff1 30%, #b4ffaa 50%, #eceff1 70%);
+  background-size: 400%;
+  border-top: 1px solid;
+  border-color: rgb(118 118 118 / 10%);
+}
+
+@keyframes diskGet-fileload {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

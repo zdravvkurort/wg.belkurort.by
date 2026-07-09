@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.docget {
+    background: linear-gradient(135.54deg, #138ff5 -15%, #d75298 50.01%, #ff0000 115%);
+	font-size: 14px;
+	font-family: "PT Sans", Arial, sans-serif;
+}
+.card-widgets__widget-pugwwvuwmczbzysiwb0hrm9sbhc7l1gdvvv3auxq {
+    background: linear-gradient(135.54deg, #138ff5 -15%, #d75298 50.01%, #ff0000 115%);
+	font-size: 14px;
+}
+#docget_docs_area {
+    background-color: white;
+	padding: 3px 10px 10px 10px;
+}
+.card-widgets__widget:before {
+    width: 0px;
+}
+#docget_docs_area .docget_line_button {
+    /* margin-bottom: -10px; */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+}
+.docget_subs_w{padding: 2px 8px; margin-right: 7px; margin-left: 0px !important; margin-top: 3px; border: 1px solid #138ff5; border-radius: 8px; color: #333333; cursor: pointer; font-size: 12px; opacity: 0.6; background-color: white;}

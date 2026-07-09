@@ -1,0 +1,13 @@
+<div id="companylist">
+{% for v in values %}
+	<div class="div-block" id="{{v.id}}">
+		<div class="div-block-4">
+			<div style="font-weight: bold;">{{v.nameCompany}}</div>
+		</div>
+		<div class="div-block-5">
+			<span class="button-input__context-menu__item__icon icon icon-inline icon-delete-trash "></span>
+		</div>
+	</div>
+</div>
+{% endfor %}
+</div>
