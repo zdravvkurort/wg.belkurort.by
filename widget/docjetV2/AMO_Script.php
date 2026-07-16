@@ -126,7 +126,7 @@ if (isset($_GET['card_id']) && isset($_GET['card_type']) && isset($_GET['doc']) 
 	$stmt = $db->query('SELECT num_doverki, fio_v_rod_pad, DATE_FORMAT(date_doverki,"%d.%m.%Y") as date_doverki, dolzhnost, dolzhnost_v_rod_pad FROM users where id ='.$manager);
 	$managerinfo = $stmt->fetchAll();
 
-    if (date('Y.m.d') >= '2026.07.10' && date('Y.m.d') <= '2026.07.26') {
+    if (date('Y.m.d') >= '2026.07.10' && date('Y.m.d') <= '2026.07.15') {
 		$data['boss_name'] = 'Пулинович В.В.';
 		$data['boss_podpis'] = 'заместителя директора Пулиновича Василия Васильевича, действующего на основании доверенности №214/1 от 03.06.2026';
 		$data['boss_dolzhnost'] = 'Заместитель директора ООО "Здравкурорт"';
